@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 3 - Inheritance, Interface, Advanced Topics</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="unit3">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">Mastering Java for University Exams</div>
+      <nav class="nav">
+        <a data-page-link="home" href="index.html">Home (Overview + Syllabus)</a>
+        <a data-page-link="unit1" href="unit1.html">Unit 1: Java Basics</a>
+        <a data-page-link="unit2" href="unit2.html">Unit 2: Operators, Control, OOP</a>
+        <a data-page-link="unit3" href="unit3.html">Unit 3: Inheritance, Interface, Advanced</a>
+        <a data-page-link="unit4" href="unit4.html">Unit 4: GUI, Applet, AWT, Servlets</a>
+      </nav>
+      <div class="feature-panel">
+        <input class="search-input" data-search type="search" placeholder="Search in Unit 3..." />
+        <button class="btn" data-dark-toggle type="button">Toggle Dark Mode</button>
+        <button class="btn primary" data-notes-download type="button">Download Notes</button>
+        <div class="progress-wrap">
+          <div>Progress</div>
+          <div class="progress-bar"><div class="progress-fill" data-progress-fill></div></div>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <section class="card">
+        <span class="badge">Unit 3</span>
+        <h1>Inheritance, Interface, Advanced Topics</h1>
+        <p>
+          This unit covers inheritance, abstract classes, interfaces, packages, string handling,
+          exception handling, and multithreading fundamentals.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Progress Tracker</h2>
+        <ul class="steps">
+          <li><label><input type="checkbox" data-progress-item="u3-theory" /> Completed theory</label></li>
+          <li><label><input type="checkbox" data-progress-item="u3-definitions" /> Completed definitions</label></li>
+          <li><label><input type="checkbox" data-progress-item="u3-diagram" /> Reviewed diagrams</label></li>
+          <li><label><input type="checkbox" data-progress-item="u3-code" /> Practiced code examples</label></li>
+          <li><label><input type="checkbox" data-progress-item="u3-practical" /> Completed practical</label></li>
+          <li><label><input type="checkbox" data-progress-item="u3-questions" /> Attempted question bank</label></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Topics Included</h2>
+        <ul>
+          <li>Inheritance, this & super</li>
+          <li>Method overriding, abstract classes</li>
+          <li>Packages & interfaces</li>
+          <li>String handling, StringBuffer, Vector</li>
+          <li>Exception handling</li>
+          <li>Multithreading</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Detailed Theory (Exam-Oriented)
+          <button class="bookmark-btn" data-bookmark="u3-theory" type="button">Bookmark</button>
+        </h2>
+        <p>
+          Inheritance allows a new class (subclass) to acquire properties and behavior of an existing
+          class (superclass), enabling code reuse and hierarchical design. The `this` keyword refers to
+          the current object, while `super` accesses superclass members. Method overriding enables runtime
+          polymorphism when a subclass provides a specific implementation for a superclass method.
+        </p>
+        <p>
+          Abstract classes provide partial implementation and cannot be instantiated, whereas interfaces
+          define a contract of methods a class must implement. Packages group related classes and help
+          avoid naming conflicts. String handling is crucial in Java: `String` is immutable, `StringBuffer`
+          is mutable and thread-safe. Exception handling uses `try`, `catch`, `finally`, and `throw` to
+          manage runtime errors, while multithreading improves performance by executing tasks concurrently.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Definitions & Explanations
+          <button class="bookmark-btn" data-bookmark="u3-definitions" type="button">Bookmark</button>
+        </h2>
+        <dl class="definition-list">
+          <dt>Inheritance</dt>
+          <dd>Mechanism where a subclass inherits properties and methods from a superclass.</dd>
+          <dt>Interface</dt>
+          <dd>A collection of abstract methods that define a contract for implementing classes.</dd>
+          <dt>Abstract Class</dt>
+          <dd>A class that cannot be instantiated and may contain abstract methods.</dd>
+          <dt>Exception</dt>
+          <dd>An event that disrupts normal program flow and can be handled using `try`/`catch`.</dd>
+          <dt>Thread</dt>
+          <dd>A lightweight subprocess for concurrent execution within a program.</dd>
+        </dl>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Diagram: Inheritance Hierarchy
+          <button class="bookmark-btn" data-bookmark="u3-diagram" type="button">Bookmark</button>
+        </h2>
+        <div class="diagram">
+          Object
+            |
+         ---------
+         |       |
+      Person   Student
+         |
+      Teacher
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Code Examples
+          <button class="bookmark-btn" data-bookmark="u3-code" type="button">Bookmark</button>
+        </h2>
+        <h3>Simple: Interface Implementation</h3>
+        <pre class="code-block">interface Printer {
+  void print();
+}
+
+class LaserPrinter implements Printer {
+  public void print() {
+    System.out.println("Printing...");
+  }
+}
+
+class Demo {
+  public static void main(String[] args) {
+    Printer p = new LaserPrinter();
+    p.print();
+  }
+}
+</pre>
+        <h3>Advanced: Custom Exception + Thread</h3>
+        <pre class="code-block">class InvalidAgeException extends Exception {
+  InvalidAgeException(String msg) { super(msg); }
+}
+
+class Worker extends Thread {
+  public void run() {
+    System.out.println("Thread running");
+  }
+}
+
+class Test {
+  static void checkAge(int age) throws InvalidAgeException {
+    if (age &lt; 18) throw new InvalidAgeException("Too young");
+  }
+
+  public static void main(String[] args) throws Exception {
+    checkAge(20);
+    new Worker().start();
+  }
+}
+</pre>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Key Points for Revision
+          <button class="bookmark-btn" data-bookmark="u3-revision" type="button">Bookmark</button>
+        </h2>
+        <ul class="key-points">
+          <li>Overriding is runtime polymorphism; overloading is compile-time.</li>
+          <li>Use `super` to access parent class members.</li>
+          <li>`String` is immutable; `StringBuffer` is mutable and thread-safe.</li>
+          <li>Interfaces define contracts; classes implement them.</li>
+          <li>Threads run concurrently and improve responsiveness.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Practical Section
+          <button class="bookmark-btn" data-bookmark="u3-practical" type="button">Bookmark</button>
+        </h2>
+        <h3>Program: Method Overriding</h3>
+        <pre class="code-block">class Animal {
+  void sound() { System.out.println("Animal sound"); }
+}
+
+class Dog extends Animal {
+  void sound() { System.out.println("Bark"); }
+}
+
+class Test {
+  public static void main(String[] args) {
+    Animal a = new Dog();
+    a.sound();
+  }
+}
+</pre>
+        <div class="output-block">Output:
+Bark
+</div>
+        <h3>Step-by-step Explanation</h3>
+        <ol class="steps">
+          <li>Create a superclass `Animal` with method `sound()`.</li>
+          <li>Override `sound()` in subclass `Dog`.</li>
+          <li>Call method using a parent reference to show runtime polymorphism.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Question Bank
+          <button class="bookmark-btn" data-bookmark="u3-questions" type="button">Bookmark</button>
+        </h2>
+        <h3>5 Marks Questions</h3>
+        <ol class="question-group">
+          <li>
+            <div class="question">Define inheritance and state its advantages.</div>
+            <div class="answer">Inheritance is the mechanism where a subclass acquires properties of a superclass. Advantages: code reuse, hierarchical design, and easy maintenance.</div>
+          </li>
+          <li>
+            <div class="question">Differentiate between abstract class and interface.</div>
+            <div class="answer">Abstract classes can have concrete methods and fields; interfaces define method contracts. A class extends one abstract class but can implement multiple interfaces.</div>
+          </li>
+        </ol>
+
+        <h3>8–10 Marks Questions</h3>
+        <ol class="question-group">
+          <li>
+            <div class="question">Explain method overriding with suitable example and rules.</div>
+            <div class="answer">Overriding occurs when a subclass provides a specific implementation of a superclass method with same signature. Rules: same name, parameters, return type (covariant allowed), and cannot reduce access level.</div>
+          </li>
+          <li>
+            <div class="question">Describe string handling in Java (String vs StringBuffer).</div>
+            <div class="answer">`String` is immutable; operations create new objects. `StringBuffer` is mutable and thread-safe, suitable for frequent modifications.</div>
+          </li>
+        </ol>
+
+        <h3>15 Marks Long Question</h3>
+        <div class="question">Discuss exception handling and multithreading in Java with example scenarios.</div>
+        <div class="answer">Exception handling uses `try`, `catch`, `finally`, `throw`, and `throws` to manage runtime errors and maintain normal flow. Checked exceptions must be handled or declared. Multithreading uses the `Thread` class or `Runnable` interface to run tasks concurrently, improving responsiveness and CPU utilization. Synchronization avoids race conditions. Examples include handling file I/O errors and running UI updates while background tasks execute.</div>
+      </section>
+    </main>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

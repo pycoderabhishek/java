@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 1 - Java Basics</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="unit1">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">Mastering Java for University Exams</div>
+      <nav class="nav">
+        <a data-page-link="home" href="index.html">Home (Overview + Syllabus)</a>
+        <a data-page-link="unit1" href="unit1.html">Unit 1: Java Basics</a>
+        <a data-page-link="unit2" href="unit2.html">Unit 2: Operators, Control, OOP</a>
+        <a data-page-link="unit3" href="unit3.html">Unit 3: Inheritance, Interface, Advanced</a>
+        <a data-page-link="unit4" href="unit4.html">Unit 4: GUI, Applet, AWT, Servlets</a>
+      </nav>
+      <div class="feature-panel">
+        <input class="search-input" data-search type="search" placeholder="Search in Unit 1..." />
+        <button class="btn" data-dark-toggle type="button">Toggle Dark Mode</button>
+        <button class="btn primary" data-notes-download type="button">Download Notes</button>
+        <div class="progress-wrap">
+          <div>Progress</div>
+          <div class="progress-bar"><div class="progress-fill" data-progress-fill></div></div>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <section class="card">
+        <span class="badge">Unit 1</span>
+        <h1>Java Basics</h1>
+        <p>
+          This unit covers Java history, core features, JVM fundamentals, bytecode, and the
+          compilation/execution process. It also introduces primitive data types, variables,
+          scope, and command-line arguments.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Progress Tracker</h2>
+        <ul class="steps">
+          <li><label><input type="checkbox" data-progress-item="u1-theory" /> Completed theory</label></li>
+          <li><label><input type="checkbox" data-progress-item="u1-definitions" /> Completed definitions</label></li>
+          <li><label><input type="checkbox" data-progress-item="u1-diagram" /> Reviewed diagrams</label></li>
+          <li><label><input type="checkbox" data-progress-item="u1-code" /> Practiced code examples</label></li>
+          <li><label><input type="checkbox" data-progress-item="u1-practical" /> Completed practical</label></li>
+          <li><label><input type="checkbox" data-progress-item="u1-questions" /> Attempted question bank</label></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Topics Included</h2>
+        <ul>
+          <li>Java overview: history, features, architecture</li>
+          <li>Applets vs applications (intro)</li>
+          <li>Compiling and running a program</li>
+          <li>Bytecode & JVM</li>
+          <li>Primitive data types, variables, scope</li>
+          <li>Command-line arguments</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Detailed Theory (Exam-Oriented)
+          <button class="bookmark-btn" data-bookmark="u1-theory" type="button">Bookmark</button>
+        </h2>
+        <p>
+          Java is a platform-independent, object-oriented programming language developed by Sun
+          Microsystems. Its key strength is the Java Virtual Machine (JVM), which executes
+          platform-neutral bytecode. A Java program is first compiled by the Java compiler into
+          bytecode (.class file). The JVM then loads, verifies, and executes this bytecode on any
+          operating system with a JVM, ensuring "Write Once, Run Anywhere".
+        </p>
+        <p>
+          Java architecture includes the JDK (development tools + JRE), JRE (JVM + core libraries),
+          and JVM (runtime engine). Variables in Java must be declared with a type, and the scope
+          and lifetime depend on where they are declared (local, instance, or static). Command-line
+          arguments allow inputs at runtime and are accessed via the `main` method parameters.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Definitions & Explanations
+          <button class="bookmark-btn" data-bookmark="u1-definitions" type="button">Bookmark</button>
+        </h2>
+        <dl class="definition-list">
+          <dt>JVM</dt>
+          <dd>The runtime engine that loads, verifies, and executes Java bytecode.</dd>
+          <dt>JRE</dt>
+          <dd>The JVM plus core libraries required to run Java applications.</dd>
+          <dt>JDK</dt>
+          <dd>The JRE plus development tools like `javac`, `javadoc`, and debugger.</dd>
+          <dt>Bytecode</dt>
+          <dd>Platform-neutral intermediate code produced by the Java compiler.</dd>
+          <dt>Scope</dt>
+          <dd>The region of a program where a variable is accessible.</dd>
+          <dt>Command-line Arguments</dt>
+          <dd>Input values passed to the program at runtime via the command line.</dd>
+        </dl>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Diagram: JVM Architecture
+          <button class="bookmark-btn" data-bookmark="u1-diagram" type="button">Bookmark</button>
+        </h2>
+        <div class="diagram">
+Class Loader
+  |
+  v
+Runtime Data Areas
+  - Method Area
+  - Heap
+  - JVM Stack
+  - PC Register
+  - Native Method Stack
+  |
+  v
+Execution Engine
+  - Interpreter
+  - JIT Compiler
+  - Garbage Collector
+  |
+  v
+JNI  -> Native Libraries
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Code Examples
+          <button class="bookmark-btn" data-bookmark="u1-code" type="button">Bookmark</button>
+        </h2>
+        <h3>Simple: Hello World + Command-Line Args</h3>
+        <pre class="code-block">class Hello {
+  public static void main(String[] args) {
+    System.out.println("Hello, Java!");
+    if (args.length &gt; 0) {
+      System.out.println("First arg: " + args[0]);
+    }
+  }
+}
+// Compile: javac Hello.java
+// Run: java Hello Alice
+</pre>
+        <h3>Advanced: Variable Scope</h3>
+        <pre class="code-block">class ScopeDemo {
+  static int global = 10;     // static scope
+
+  public static void main(String[] args) {
+    int local = 5;            // local scope
+    if (local &lt; global) {
+      int block = 2;          // block scope
+      System.out.println(global + local + block);
+    }
+  }
+}
+</pre>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Key Points for Revision
+          <button class="bookmark-btn" data-bookmark="u1-revision" type="button">Bookmark</button>
+        </h2>
+        <ul class="key-points">
+          <li>Java is compiled to bytecode and executed by the JVM.</li>
+          <li>JDK = JRE + tools; JRE = JVM + libraries.</li>
+          <li>Variables have type, scope, and lifetime.</li>
+          <li>Command-line arguments are accessed through `main(String[] args)`.</li>
+          <li>Platform independence is achieved via JVM.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Practical Section
+          <button class="bookmark-btn" data-bookmark="u1-practical" type="button">Bookmark</button>
+        </h2>
+        <h3>Program: Sum of Two Numbers (Command-Line Args)</h3>
+        <pre class="code-block">class SumArgs {
+  public static void main(String[] args) {
+    int a = Integer.parseInt(args[0]);
+    int b = Integer.parseInt(args[1]);
+    System.out.println("Sum = " + (a + b));
+  }
+}
+// Run: java SumArgs 5 7
+</pre>
+        <div class="output-block">Output:
+Sum = 12
+</div>
+        <h3>Step-by-step Explanation</h3>
+        <ol class="steps">
+          <li>Read inputs from `args` array.</li>
+          <li>Convert to integers using `Integer.parseInt()`.</li>
+          <li>Add values and print the result.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Question Bank
+          <button class="bookmark-btn" data-bookmark="u1-questions" type="button">Bookmark</button>
+        </h2>
+        <h3>5 Marks Questions</h3>
+        <ol class="question-group">
+          <li>
+            <div class="question">Define JVM and list its main components.</div>
+            <div class="answer">JVM is the runtime engine that executes bytecode. Components: Class Loader, Runtime Data Areas (method area, heap, stack, PC register, native stack), Execution Engine (interpreter, JIT, GC), and JNI.</div>
+          </li>
+          <li>
+            <div class="question">Differentiate JDK, JRE, and JVM.</div>
+            <div class="answer">JVM executes bytecode. JRE = JVM + core libraries. JDK = JRE + development tools like `javac` and `javadoc`.</div>
+          </li>
+        </ol>
+
+        <h3>8–10 Marks Questions</h3>
+        <ol class="question-group">
+          <li>
+            <div class="question">Explain the Java compilation and execution process with bytecode.</div>
+            <div class="answer">Source code is compiled by `javac` into bytecode (.class). The Class Loader loads classes, Bytecode Verifier checks safety, and the Execution Engine interprets or JIT-compiles bytecode to native code, enabling platform independence.</div>
+          </li>
+          <li>
+            <div class="question">Discuss Java data types and variable scope with examples.</div>
+            <div class="answer">Java has primitive types (int, char, float, etc.) and reference types. Variables can be local (method/block), instance (per object), or static (class-level). Scope defines visibility; lifetime depends on where declared.</div>
+          </li>
+        </ol>
+
+        <h3>15 Marks Long Question</h3>
+        <div class="question">Describe JVM architecture in detail and explain how it supports platform independence.</div>
+        <div class="answer">JVM architecture includes the Class Loader subsystem, Runtime Data Areas (method area, heap, stack, PC register, native method stack), Execution Engine (interpreter, JIT compiler, GC), and JNI for native calls. Java source is compiled into bytecode, which is platform-neutral. The JVM on each OS interprets/JIT-compiles bytecode into native instructions, ensuring Write Once Run Anywhere. The verifier ensures security, while GC manages memory, making Java robust and portable.</div>
+      </section>
+    </main>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

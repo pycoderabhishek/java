@@ -1,0 +1,70 @@
+🔥 1. BEST ONLINE RESOURCES (UNIT-WISE)
+📘 UNIT I – Fundamentals (Must Master)
+🔗 Core Concepts
+👉 Java Programming Basics
+👉 Introduction to Java
+
+✔ Covers:
+
+History, Features
+JVM, JDK, JRE basics
+Syntax & Hello World
+🔗 JVM + Bytecode (VERY IMPORTANT FOR EXAMS)
+👉 JVM Architecture Explained
+👉 Bytecode in Java
+
+✔ Key concept:
+
+Java → compiled to bytecode → executed by JVM
+Platform independence (Write Once Run Anywhere)
+🔗 Compilation & Execution
+👉 Compile and Run Java Program
+
+✔ Commands:
+
+javac file.java
+java classname
+📘 UNIT II – Logic + OOP Core
+🔗 Complete Java Tutorial
+👉 Complete Java Tutorial (All Topics)
+
+✔ Covers:
+
+Operators
+Control Statements
+Arrays
+Classes & Objects
+Constructors
+Methods & Overloading
+🔥 Important Exam Topics:
+if, switch, loops
+Constructors (default + parameterized)
+Method overloading
+Access specifiers
+📘 UNIT III – Advanced OOP + System Concepts
+🔗 OOP + Inheritance + Interfaces
+👉 Java OOP & Concepts Guide
+
+✔ Covers:
+
+Inheritance
+Abstract class
+Interface
+Polymorphism
+🔥 Extra Important Topics:
+String vs StringBuffer
+Exception Handling
+Multithreading
+Packages
+📘 UNIT IV – GUI + Web Java
+Topics (No single perfect link, combine):
+AWT (UI Components)
+Applets (old but exam important)
+Servlets (intro)
+RMI (basic idea)
+
+👉 You should search:
+
+“Java AWT tutorial GeeksforGeeks”
+“Java Applet lifecycle”
+“Java Servlet basics”

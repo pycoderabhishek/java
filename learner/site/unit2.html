@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 2 - Operators, Control, OOP</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="unit2">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">Mastering Java for University Exams</div>
+      <nav class="nav">
+        <a data-page-link="home" href="index.html">Home (Overview + Syllabus)</a>
+        <a data-page-link="unit1" href="unit1.html">Unit 1: Java Basics</a>
+        <a data-page-link="unit2" href="unit2.html">Unit 2: Operators, Control, OOP</a>
+        <a data-page-link="unit3" href="unit3.html">Unit 3: Inheritance, Interface, Advanced</a>
+        <a data-page-link="unit4" href="unit4.html">Unit 4: GUI, Applet, AWT, Servlets</a>
+      </nav>
+      <div class="feature-panel">
+        <input class="search-input" data-search type="search" placeholder="Search in Unit 2..." />
+        <button class="btn" data-dark-toggle type="button">Toggle Dark Mode</button>
+        <button class="btn primary" data-notes-download type="button">Download Notes</button>
+        <div class="progress-wrap">
+          <div>Progress</div>
+          <div class="progress-bar"><div class="progress-fill" data-progress-fill></div></div>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <section class="card">
+        <span class="badge">Unit 2</span>
+        <h1>Operators, Control, OOP</h1>
+        <p>
+          This unit focuses on operators, typecasting, control flow statements, arrays, and
+          object-oriented programming fundamentals like classes, objects, constructors, and
+          method overloading.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Progress Tracker</h2>
+        <ul class="steps">
+          <li><label><input type="checkbox" data-progress-item="u2-theory" /> Completed theory</label></li>
+          <li><label><input type="checkbox" data-progress-item="u2-definitions" /> Completed definitions</label></li>
+          <li><label><input type="checkbox" data-progress-item="u2-diagram" /> Reviewed diagrams</label></li>
+          <li><label><input type="checkbox" data-progress-item="u2-code" /> Practiced code examples</label></li>
+          <li><label><input type="checkbox" data-progress-item="u2-practical" /> Completed practical</label></li>
+          <li><label><input type="checkbox" data-progress-item="u2-questions" /> Attempted question bank</label></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Topics Included</h2>
+        <ul>
+          <li>Operators & typecasting</li>
+          <li>Control statements and loops</li>
+          <li>Arrays</li>
+          <li>Classes & objects</li>
+          <li>Constructors and constructor types</li>
+          <li>Methods, overloading, access specifiers</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Detailed Theory (Exam-Oriented)
+          <button class="bookmark-btn" data-bookmark="u2-theory" type="button">Bookmark</button>
+        </h2>
+        <p>
+          Unit II builds logical foundations in Java. Operators perform arithmetic, relational,
+          logical, and assignment operations. Typecasting converts one data type to another and
+          can be implicit (widening) or explicit (narrowing). Control statements (`if`, `switch`)
+          and loops (`for`, `while`, `do-while`) define program flow, while `break` and `continue`
+          control loop execution.
+        </p>
+        <p>
+          Arrays store homogeneous data and are indexed from 0. Object-oriented programming
+          concepts are introduced through classes and objects. Constructors initialize objects and
+          can be default or parameterized. Method overloading supports multiple methods with the
+          same name but different parameters, while access specifiers (`public`, `private`, `protected`,
+          default) define visibility.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Definitions & Explanations
+          <button class="bookmark-btn" data-bookmark="u2-definitions" type="button">Bookmark</button>
+        </h2>
+        <dl class="definition-list">
+          <dt>Typecasting</dt>
+          <dd>Conversion of one data type to another (widening or narrowing).</dd>
+          <dt>Loop</dt>
+          <dd>A control structure that repeats a block of code based on a condition.</dd>
+          <dt>Constructor</dt>
+          <dd>A special method used to initialize objects.</dd>
+          <dt>Method Overloading</dt>
+          <dd>Multiple methods with the same name but different parameter lists.</dd>
+          <dt>Access Specifier</dt>
+          <dd>Keyword that sets visibility: `public`, `private`, `protected`, or default.</dd>
+        </dl>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Diagram: Class & Object Relationship
+          <button class="bookmark-btn" data-bookmark="u2-diagram" type="button">Bookmark</button>
+        </h2>
+        <div class="diagram">
+Class (Blueprint)
+  - fields
+  - constructors
+  - methods
+       |
+       v
+Object (Instance)
+  - actual data in memory
+  - method calls operate on data
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Code Examples
+          <button class="bookmark-btn" data-bookmark="u2-code" type="button">Bookmark</button>
+        </h2>
+        <h3>Simple: Control Flow</h3>
+        <pre class="code-block">class ControlDemo {
+  public static void main(String[] args) {
+    int n = 5;
+    if (n % 2 == 0) {
+      System.out.println("Even");
+    } else {
+      System.out.println("Odd");
+    }
+
+    for (int i = 1; i &lt;= 3; i++) {
+      System.out.println("i = " + i);
+    }
+  }
+}
+</pre>
+        <h3>Advanced: Constructor + Method Overloading</h3>
+        <pre class="code-block">class Box {
+  int l, b, h;
+
+  Box() {              // default constructor
+    l = b = h = 1;
+  }
+
+  Box(int l, int b, int h) {  // parameterized
+    this.l = l; this.b = b; this.h = h;
+  }
+
+  int volume() { return l * b * h; }
+  int volume(int scale) { return l * b * h * scale; } // overloading
+}
+
+class Demo {
+  public static void main(String[] args) {
+    Box a = new Box();
+    Box b = new Box(2, 3, 4);
+    System.out.println(a.volume());
+    System.out.println(b.volume(2));
+  }
+}
+</pre>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Key Points for Revision
+          <button class="bookmark-btn" data-bookmark="u2-revision" type="button">Bookmark</button>
+        </h2>
+        <ul class="key-points">
+          <li>Use explicit casting when narrowing types.</li>
+          <li>`switch` is best for discrete choices; `if` is for complex conditions.</li>
+          <li>Arrays are fixed-size and zero-indexed.</li>
+          <li>Constructors initialize objects and share the class name.</li>
+          <li>Overloading is compile-time polymorphism.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Practical Section
+          <button class="bookmark-btn" data-bookmark="u2-practical" type="button">Bookmark</button>
+        </h2>
+        <h3>Program: Count Even/Odd in Array</h3>
+        <pre class="code-block">class CountEvenOdd {
+  public static void main(String[] args) {
+    int[] arr = {2, 5, 8, 9, 12};
+    int even = 0, odd = 0;
+    for (int n : arr) {
+      if (n % 2 == 0) even++; else odd++;
+    }
+    System.out.println("Even: " + even);
+    System.out.println("Odd: " + odd);
+  }
+}
+</pre>
+        <div class="output-block">Output:
+Even: 3
+Odd: 2
+</div>
+        <h3>Step-by-step Explanation</h3>
+        <ol class="steps">
+          <li>Create an integer array.</li>
+          <li>Loop through each element using `for-each`.</li>
+          <li>Check parity with `% 2` and update counters.</li>
+          <li>Print the totals.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Question Bank
+          <button class="bookmark-btn" data-bookmark="u2-questions" type="button">Bookmark</button>
+        </h2>
+        <h3>5 Marks Questions</h3>
+        <ol class="question-group">
+          <li>
+            <div class="question">Explain implicit and explicit typecasting with examples.</div>
+            <div class="answer">Implicit (widening) happens automatically, e.g., `int` to `double`. Explicit (narrowing) requires a cast, e.g., `double d=9.8; int x=(int)d;`.</div>
+          </li>
+          <li>
+            <div class="question">Write the syntax of `for` and `switch` statements.</div>
+            <div class="answer">`for(init; condition; update){...}` and `switch(expr){case x:...break; default:...}`.</div>
+          </li>
+        </ol>
+
+        <h3>8–10 Marks Questions</h3>
+        <ol class="question-group">
+          <li>
+            <div class="question">Discuss constructors and their types with a suitable example.</div>
+            <div class="answer">Constructors initialize objects. Types: default (no args) and parameterized. Example: `Box(){...}` and `Box(int l,int b,int h){...}` for different initial values.</div>
+          </li>
+          <li>
+            <div class="question">Explain method overloading and access specifiers in Java.</div>
+            <div class="answer">Overloading allows same method name with different parameters (compile-time). Access specifiers define visibility: `public`, `private`, `protected`, and default.</div>
+          </li>
+        </ol>
+
+        <h3>15 Marks Long Question</h3>
+        <div class="question">Describe control statements and looping structures in Java with examples and use cases.</div>
+        <div class="answer">Control statements include `if-else` for conditional branching and `switch` for multi-way selection. Looping constructs include `for` (known iterations), `while` (pre-test), and `do-while` (post-test). `break` exits a loop/switch, while `continue` skips to the next iteration. Use `if` for complex conditions, `switch` for discrete values, `for` when iterations are known, and `while/do-while` for condition-based repetition.</div>
+      </section>
+    </main>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

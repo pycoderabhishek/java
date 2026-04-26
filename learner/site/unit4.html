@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unit 4 - GUI, Applet, AWT, Servlets</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="unit4">
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">Mastering Java for University Exams</div>
+      <nav class="nav">
+        <a data-page-link="home" href="index.html">Home (Overview + Syllabus)</a>
+        <a data-page-link="unit1" href="unit1.html">Unit 1: Java Basics</a>
+        <a data-page-link="unit2" href="unit2.html">Unit 2: Operators, Control, OOP</a>
+        <a data-page-link="unit3" href="unit3.html">Unit 3: Inheritance, Interface, Advanced</a>
+        <a data-page-link="unit4" href="unit4.html">Unit 4: GUI, Applet, AWT, Servlets</a>
+      </nav>
+      <div class="feature-panel">
+        <input class="search-input" data-search type="search" placeholder="Search in Unit 4..." />
+        <button class="btn" data-dark-toggle type="button">Toggle Dark Mode</button>
+        <button class="btn primary" data-notes-download type="button">Download Notes</button>
+        <div class="progress-wrap">
+          <div>Progress</div>
+          <div class="progress-bar"><div class="progress-fill" data-progress-fill></div></div>
+        </div>
+      </div>
+    </aside>
+    <main class="main">
+      <section class="card">
+        <span class="badge">Unit 4</span>
+        <h1>GUI, Applet, AWT, Servlets</h1>
+        <p>
+          This unit focuses on GUI concepts, applet lifecycle, AWT components and layouts,
+          and an introduction to servlets and RMI.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Progress Tracker</h2>
+        <ul class="steps">
+          <li><label><input type="checkbox" data-progress-item="u4-theory" /> Completed theory</label></li>
+          <li><label><input type="checkbox" data-progress-item="u4-definitions" /> Completed definitions</label></li>
+          <li><label><input type="checkbox" data-progress-item="u4-diagram" /> Reviewed diagrams</label></li>
+          <li><label><input type="checkbox" data-progress-item="u4-code" /> Practiced code examples</label></li>
+          <li><label><input type="checkbox" data-progress-item="u4-practical" /> Completed practical</label></li>
+          <li><label><input type="checkbox" data-progress-item="u4-questions" /> Attempted question bank</label></li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Topics Included</h2>
+        <ul>
+          <li>Applet lifecycle, tags, methods</li>
+          <li>Drawing lines, rectangles, polygons</li>
+          <li>AWT hierarchy and controls</li>
+          <li>Frames, panels, layout managers</li>
+          <li>Servlets & RMI basics</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Detailed Theory (Exam-Oriented)
+          <button class="bookmark-btn" data-bookmark="u4-theory" type="button">Bookmark</button>
+        </h2>
+        <p>
+          Applets are small Java programs that run inside a browser or applet viewer. They follow a
+          lifecycle: `init()` for initialization, `start()` when execution begins, `paint()` for rendering,
+          `stop()` when paused, and `destroy()` for cleanup. Applet tags in HTML specify the class and
+          dimensions for execution.
+        </p>
+        <p>
+          The Abstract Window Toolkit (AWT) provides GUI components such as `Button`, `Label`, `TextField`,
+          and containers like `Frame` and `Panel`. Layout managers (`FlowLayout`, `BorderLayout`, `GridLayout`)
+          control component positioning. Servlets handle HTTP requests on the server side, while RMI allows
+          method calls across JVMs for distributed applications.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Definitions & Explanations
+          <button class="bookmark-btn" data-bookmark="u4-definitions" type="button">Bookmark</button>
+        </h2>
+        <dl class="definition-list">
+          <dt>Applet</dt>
+          <dd>A Java program embedded in a web page and executed by a browser or applet viewer.</dd>
+          <dt>AWT</dt>
+          <dd>Java's GUI toolkit for creating windows, buttons, and other components.</dd>
+          <dt>Layout Manager</dt>
+          <dd>Strategy object that arranges components in a container.</dd>
+          <dt>Servlet</dt>
+          <dd>Server-side Java program that handles HTTP requests and responses.</dd>
+          <dt>RMI</dt>
+          <dd>Remote Method Invocation allows Java objects to communicate across JVMs.</dd>
+        </dl>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Diagram: Applet Lifecycle
+          <button class="bookmark-btn" data-bookmark="u4-diagram" type="button">Bookmark</button>
+        </h2>
+        <div class="diagram">
+init()  -> start() -> paint()
+  ^                    |
+  |                    v
+destroy() <- stop() <-
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Code Examples
+          <button class="bookmark-btn" data-bookmark="u4-code" type="button">Bookmark</button>
+        </h2>
+        <h3>Simple: Applet Skeleton</h3>
+        <pre class="code-block">import java.applet.Applet;
+import java.awt.Graphics;
+
+public class HelloApplet extends Applet {
+  public void init() {
+    // initialization
+  }
+
+  public void paint(Graphics g) {
+    g.drawString("Hello Applet", 20, 20);
+  }
+}
+// &lt;applet code="HelloApplet" width="200" height="100"&gt;&lt;/applet&gt;
+</pre>
+        <h3>Advanced: AWT Frame with Button</h3>
+        <pre class="code-block">import java.awt.*;
+import java.awt.event.*;
+
+class MyFrame extends Frame implements ActionListener {
+  Button btn = new Button("Click");
+
+  MyFrame() {
+    setLayout(new FlowLayout());
+    add(btn);
+    btn.addActionListener(this);
+    setSize(300, 200);
+    setVisible(true);
+  }
+
+  public void actionPerformed(ActionEvent e) {
+    System.out.println("Button clicked");
+  }
+}
+
+public class Demo {
+  public static void main(String[] args) {
+    new MyFrame();
+  }
+}
+</pre>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Key Points for Revision
+          <button class="bookmark-btn" data-bookmark="u4-revision" type="button">Bookmark</button>
+        </h2>
+        <ul class="key-points">
+          <li>Applet lifecycle: `init()` → `start()` → `paint()` → `stop()` → `destroy()`.</li>
+          <li>AWT provides GUI components and containers.</li>
+          <li>Layout managers control component placement.</li>
+          <li>Servlets run on server side for web apps.</li>
+          <li>RMI enables distributed Java communication.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Practical Section
+          <button class="bookmark-btn" data-bookmark="u4-practical" type="button">Bookmark</button>
+        </h2>
+        <h3>Program: AWT Button Click</h3>
+        <pre class="code-block">import java.awt.*;
+import java.awt.event.*;
+
+class ClickDemo extends Frame implements ActionListener {
+  Button btn = new Button("Click Me");
+
+  ClickDemo() {
+    setLayout(new FlowLayout());
+    add(btn);
+    btn.addActionListener(this);
+    setSize(250, 150);
+    setVisible(true);
+  }
+
+  public void actionPerformed(ActionEvent e) {
+    System.out.println("Button clicked!");
+  }
+
+  public static void main(String[] args) {
+    new ClickDemo();
+  }
+}
+</pre>
+        <div class="output-block">Output:
+Button clicked!
+</div>
+        <h3>Step-by-step Explanation</h3>
+        <ol class="steps">
+          <li>Create a `Frame` and add a `Button`.</li>
+          <li>Attach an `ActionListener` to handle clicks.</li>
+          <li>Print a message in `actionPerformed()`.</li>
+        </ol>
+      </section>
+
+      <section class="card">
+        <h2 class="section-title">Question Bank
+          <button class="bookmark-btn" data-bookmark="u4-questions" type="button">Bookmark</button>
+        </h2>
+        <h3>5 Marks Questions</h3>
+        <ol class="question-group">
+          <li>
+            <div class="question">List the applet lifecycle methods in order.</div>
+            <div class="answer">`init()` → `start()` → `paint()` → `stop()` → `destroy()`.</div>
+          </li>
+          <li>
+            <div class="question">What is an AWT layout manager? Give two examples.</div>
+            <div class="answer">A layout manager arranges components in a container. Examples: `FlowLayout`, `BorderLayout`, `GridLayout`.</div>
+          </li>
+        </ol>
+
+        <h3>8–10 Marks Questions</h3>
+        <ol class="question-group">
+          <li>
+            <div class="question">Explain AWT component hierarchy with a neat diagram.</div>
+            <div class="answer">AWT has `Component` at the top, then `Container` and subclasses like `Window` → `Frame`, and UI controls like `Button`, `Label`, `TextField`. Containers hold components and use layouts for placement.</div>
+          </li>
+          <li>
+            <div class="question">Describe applet tags and their purpose with an example.</div>
+            <div class="answer">Applet tags embed applets in HTML: `&lt;applet code="MyApplet" width="300" height="200"&gt;...&lt;/applet&gt;`. Attributes define class and dimensions.</div>
+          </li>
+        </ol>
+
+        <h3>15 Marks Long Question</h3>
+        <div class="question">Write an essay on servlets and their role in web applications. Include request/response flow.</div>
+        <div class="answer">Servlets are server-side Java components that handle HTTP requests. A client sends a request to the web server, which forwards it to the servlet container. The servlet processes input using `doGet()`/`doPost()`, interacts with business logic or databases, and returns a response. Servlets are platform-independent, reusable, and scalable. They form the core of many Java web applications by separating presentation and logic.</div>
+      </section>
+    </main>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
